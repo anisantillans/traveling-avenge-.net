@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TPComplejidadModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'TPComplejidad.dbo.Centro_Poblado' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Centro_Poblado">
+    <Key>
+      <PropertyRef Name="UBIGEO" />
+    </Key>
+    <Property Name="UBIGEO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DEP" Type="varchar" MaxLength="100" />
+    <Property Name="PROV" Type="varchar" MaxLength="100" />
+    <Property Name="DIST" Type="varchar" MaxLength="100" />
+    <Property Name="CODCP" Type="varchar" MaxLength="50" />
+    <Property Name="NOMCP" Type="nvarchar" MaxLength="400" />
+    <Property Name="MNOMCP" Type="nvarchar" MaxLength="400" />
+    <Property Name="CAPITAL" Type="varchar" MaxLength="50" />
+    <Property Name="CON_IE" Type="varchar" MaxLength="50" />
+    <Property Name="NIVEL" Type="varchar" MaxLength="50" />
+    <Property Name="CPINEI" Type="varchar" MaxLength="50" />
+    <Property Name="CPINEI2" Type="varchar" MaxLength="50" />
+    <Property Name="CPINEI_BKP" Type="varchar" MaxLength="50" />
+    <Property Name="FUENTE_G" Type="varchar" MaxLength="100" />
+    <Property Name="Z" Type="varchar" MaxLength="50" />
+    <Property Name="XGD" Type="decimal" Precision="18" Scale="9" />
+    <Property Name="YGD" Type="decimal" Precision="18" Scale="9" />
+  </EntityType>
+  <EntityContainer Name="TPComplejidadModelStoreContainer">
+    <EntitySet Name="Centro_Poblado" EntityType="Self.Centro_Poblado" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Centro_Poblado].[UBIGEO] AS [UBIGEO], 
+    [Centro_Poblado].[DEP] AS [DEP], 
+    [Centro_Poblado].[PROV] AS [PROV], 
+    [Centro_Poblado].[DIST] AS [DIST], 
+    [Centro_Poblado].[CODCP] AS [CODCP], 
+    [Centro_Poblado].[NOMCP] AS [NOMCP], 
+    [Centro_Poblado].[MNOMCP] AS [MNOMCP], 
+    [Centro_Poblado].[CAPITAL] AS [CAPITAL], 
+    [Centro_Poblado].[CON_IE] AS [CON_IE], 
+    [Centro_Poblado].[NIVEL] AS [NIVEL], 
+    [Centro_Poblado].[CPINEI] AS [CPINEI], 
+    [Centro_Poblado].[CPINEI2] AS [CPINEI2], 
+    [Centro_Poblado].[CPINEI_BKP] AS [CPINEI_BKP], 
+    [Centro_Poblado].[FUENTE_G] AS [FUENTE_G], 
+    [Centro_Poblado].[Z] AS [Z], 
+    [Centro_Poblado].[XGD] AS [XGD], 
+    [Centro_Poblado].[YGD] AS [YGD]
+    FROM [dbo].[Centro_Poblado] AS [Centro_Poblado]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

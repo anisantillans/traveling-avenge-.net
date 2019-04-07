@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/icons.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/style.css" rel="stylesheet" />
+    <link href="~/Content/Leaflet/leaflet.css" rel="stylesheet" />
+    <link href="~/Content/plugins/select2/s2/select2.css" rel="stylesheet" />
+    <script src="~/Content/assets/js/modernizr.min.js"></script>
+    @RenderSection("Styles", required: false)
+</head>
+<body class="widescreen fixed-left-void">
+
+    <!-- Begin page -->
+    <div id="wrapper" class="enlarged forced">
+
+        @{ Html.RenderPartial("_TopBar");}
+        @{ Html.RenderPartial("_LeftSideBar");}
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+
+                    <!-- Page-Title -->
+                    @RenderBody()
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+
+            <footer class="footer text-right">
+                &copy; 2016 - 2018. All rights reserved.
+            </footer>
+            @{ Html.RenderPartial("_RightSideBar");}
+
+        </div>
+    </div>
+
+        <script>
+            var resizefunc = [];
+            var map;
+            var markers = [];
+        </script>
+        <script src="~/Content/assets/js/jquery.min.js"></script>
+        <script src="~/Content/assets/js/popper.min.js"></script>
+        <script src="~/Content/assets/js/bootstrap.min.js"></script>
+        <script src="~/Content/assets/js/detect.js"></script>
+        <script src="~/Content/assets/js/fastclick.js"></script>
+        <script src="~/Content/assets/js/jquery.slimscroll.js"></script>
+        <script src="~/Content/assets/js/jquery.blockUI.js"></script>
+        <script src="~/Content/assets/js/waves.js"></script>
+        <script src="~/Content/assets/js/wow.min.js"></script>
+        <script src="~/Content/assets/js/jquery.nicescroll.js"></script>
+        <script src="~/Content/assets/js/jquery.scrollTo.min.js"></script>
+        <script src="~/Content/assets/js/jquery.core.js"></script>
+        <script src="~/Content/assets/js/jquery.app.js"></script>
+        <script src="~/Content/Leaflet/leaflet.js"></script>
+        <script src="~/Content/plugins/select2/s2/select2.min.js"></script>
+        @RazorHelpers.Script("Pages/Shared/Global.js", Url)
+        @RenderSection("Scripts", required: false)
+</body>
+</html>

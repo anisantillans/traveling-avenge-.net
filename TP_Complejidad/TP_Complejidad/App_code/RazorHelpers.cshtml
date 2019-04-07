@@ -1,0 +1,30 @@
+﻿@helper Script(String scriptName, System.Web.Mvc.UrlHelper url)
+{
+    <script src="@url.Content("~/Scripts/" + scriptName)" type="text/javascript"></script>
+}
+
+@helper Style(String styleName, System.Web.Mvc.UrlHelper url, String rel = "stylesheet", String type = "text/css")
+{
+    <link href="@url.Content("~/Content/" + styleName)" rel="@rel" type="@type" />
+}
+
+@helper Content(String contentName, System.Web.Mvc.UrlHelper url)
+{
+if (contentName.EndsWith(".js"))
+{
+        <script src="@url.Content("~/Content/" + contentName)" type="text/javascript"></script>
+}
+else if (contentName.EndsWith(".css"))
+{
+        <link href="@url.Content("~/Content/" + contentName)" rel="stylesheet" type="text/css" />
+}
+else
+{
+        @url.Content("~/Content/" + contentName)
+}
+}
+
+@helper LoadingSpinner()
+{
+    <img src="http://www.wearefolk.com/wp-content/themes/folk/images/loading_spinner.gif" />
+}

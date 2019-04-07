@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TPComplejidadModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'TPComplejidad.dbo.Centro_Poblado' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Centro_Poblado">
+          <Key>
+            <PropertyRef Name="UBIGEO" />
+          </Key>
+          <Property Name="UBIGEO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DEP" Type="varchar" MaxLength="100" />
+          <Property Name="PROV" Type="varchar" MaxLength="100" />
+          <Property Name="DIST" Type="varchar" MaxLength="100" />
+          <Property Name="CODCP" Type="varchar" MaxLength="50" />
+          <Property Name="NOMCP" Type="nvarchar" MaxLength="400" />
+          <Property Name="MNOMCP" Type="nvarchar" MaxLength="400" />
+          <Property Name="CAPITAL" Type="varchar" MaxLength="50" />
+          <Property Name="CON_IE" Type="varchar" MaxLength="50" />
+          <Property Name="NIVEL" Type="varchar" MaxLength="50" />
+          <Property Name="CPINEI" Type="varchar" MaxLength="50" />
+          <Property Name="CPINEI2" Type="varchar" MaxLength="50" />
+          <Property Name="CPINEI_BKP" Type="varchar" MaxLength="50" />
+          <Property Name="FUENTE_G" Type="varchar" MaxLength="100" />
+          <Property Name="Z" Type="varchar" MaxLength="50" />
+          <Property Name="XGD" Type="decimal" Precision="18" Scale="9" />
+          <Property Name="YGD" Type="decimal" Precision="18" Scale="9" />
+        </EntityType>
+        <EntityContainer Name="TPComplejidadModelStoreContainer">
+          <EntitySet Name="Centro_Poblado" EntityType="Self.Centro_Poblado" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Centro_Poblado].[UBIGEO] AS [UBIGEO], 
+    [Centro_Poblado].[DEP] AS [DEP], 
+    [Centro_Poblado].[PROV] AS [PROV], 
+    [Centro_Poblado].[DIST] AS [DIST], 
+    [Centro_Poblado].[CODCP] AS [CODCP], 
+    [Centro_Poblado].[NOMCP] AS [NOMCP], 
+    [Centro_Poblado].[MNOMCP] AS [MNOMCP], 
+    [Centro_Poblado].[CAPITAL] AS [CAPITAL], 
+    [Centro_Poblado].[CON_IE] AS [CON_IE], 
+    [Centro_Poblado].[NIVEL] AS [NIVEL], 
+    [Centro_Poblado].[CPINEI] AS [CPINEI], 
+    [Centro_Poblado].[CPINEI2] AS [CPINEI2], 
+    [Centro_Poblado].[CPINEI_BKP] AS [CPINEI_BKP], 
+    [Centro_Poblado].[FUENTE_G] AS [FUENTE_G], 
+    [Centro_Poblado].[Z] AS [Z], 
+    [Centro_Poblado].[XGD] AS [XGD], 
+    [Centro_Poblado].[YGD] AS [YGD]
+    FROM [dbo].[Centro_Poblado] AS [Centro_Poblado]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TPComplejidadModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Centro_Poblado">
+          <Key>
+            <PropertyRef Name="UBIGEO" />
+          </Key>
+          <Property Name="UBIGEO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DEP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PROV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DIST" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CODCP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NOMCP" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="MNOMCP" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="CAPITAL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CON_IE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NIVEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CPINEI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CPINEI2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CPINEI_BKP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FUENTE_G" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Z" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="XGD" Type="Decimal" Precision="18" Scale="9" />
+          <Property Name="YGD" Type="Decimal" Precision="18" Scale="9" />
+        </EntityType>
+        <EntityContainer Name="TPComplejidadEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Centro_Poblado" EntityType="Self.Centro_Poblado" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TPComplejidadModelStoreContainer" CdmEntityContainer="TPComplejidadEntities">
+          <EntitySetMapping Name="Centro_Poblado">
+            <EntityTypeMapping TypeName="TPComplejidadModel.Centro_Poblado">
+              <MappingFragment StoreEntitySet="Centro_Poblado">
+                <ScalarProperty Name="UBIGEO" ColumnName="UBIGEO" />
+                <ScalarProperty Name="DEP" ColumnName="DEP" />
+                <ScalarProperty Name="PROV" ColumnName="PROV" />
+                <ScalarProperty Name="DIST" ColumnName="DIST" />
+                <ScalarProperty Name="CODCP" ColumnName="CODCP" />
+                <ScalarProperty Name="NOMCP" ColumnName="NOMCP" />
+                <ScalarProperty Name="MNOMCP" ColumnName="MNOMCP" />
+                <ScalarProperty Name="CAPITAL" ColumnName="CAPITAL" />
+                <ScalarProperty Name="CON_IE" ColumnName="CON_IE" />
+                <ScalarProperty Name="NIVEL" ColumnName="NIVEL" />
+                <ScalarProperty Name="CPINEI" ColumnName="CPINEI" />
+                <ScalarProperty Name="CPINEI2" ColumnName="CPINEI2" />
+                <ScalarProperty Name="CPINEI_BKP" ColumnName="CPINEI_BKP" />
+                <ScalarProperty Name="FUENTE_G" ColumnName="FUENTE_G" />
+                <ScalarProperty Name="Z" ColumnName="Z" />
+                <ScalarProperty Name="XGD" ColumnName="XGD" />
+                <ScalarProperty Name="YGD" ColumnName="YGD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

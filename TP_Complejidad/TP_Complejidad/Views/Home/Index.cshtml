@@ -1,0 +1,111 @@
+﻿@model TP_Complejidad.ViewModel.CentroPobladoViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+    var contador = 2;
+}
+
+
+
+@section Styles{
+    <style>
+        #mapid {
+            height: 1130px;
+            width: 100%;
+        }
+    </style>
+}
+
+<!--div for the map-->
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card-box">
+            <div id="mapid"></div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card-box" style="height: 1150px;width: 100%;">
+            <form method="post">
+                <div class="text-center">
+                    <h4>CENTRO POBLADO</h4>
+                </div>
+                <table class="table" id="tblPueblo">
+                    <thead>
+                        <tr>
+                            <th class="col-lg-9">Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="tmplRow">
+                            <td>
+                                <div class="form-group">
+                                    <select class="form-control" id="tipo" name="tipo">
+                                        <option value="0" @(Model.tipo=="0" ? "selected" : String.Empty)>NO ES CAPITAL</option>
+                                        <option value="1" @(Model.tipo=="1" ? "selected" : String.Empty)>DEPARTAMENTAL</option>
+                                        <option value="2" @(Model.tipo=="2" ? "selected" : String.Empty)>PROVINCIAL</option>
+                                        <option value="3" @(Model.tipo=="3" ? "selected" : String.Empty)>DISTRITAL</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary form-control"><i class="fa fa-filter"></i> Filtrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxGYGRBGB7JQFqEEUw71nzC0wXpnofuf8&callback=initMap">
+    </script>
+    
+    <script>
+        function initMap() {
+            var mapProp = {
+                //center: new google.maps.LatLng(-12.06, -77.04),
+                center: new google.maps.LatLng(-12.06, -77.04),
+                zoom: 6,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById('mapid'), mapProp);
+
+
+            var lat = 0;
+            var lng = 0;
+
+            var line = new google.maps.Polyline({
+                path: [
+                    @foreach (var punto in Model.LstCentroPoblado)
+                    {
+                        @:new google.maps.LatLng(@punto.Y , @punto.X),
+
+                    }
+                ],
+                strokeColor: "#ff0000",
+                strokeOpacity: 1.0,
+                strokeWeight: 1,
+                map: map
+            });
+            @foreach (var punto in Model.LstCentroPoblado)
+            {
+                @:addMarker(new google.maps.LatLng(@punto.Y , @punto.X))
+            }
+        };
+
+        function addMarker(location) {
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+            markers.push(marker);
+        }
+
+    </script>
+}
+

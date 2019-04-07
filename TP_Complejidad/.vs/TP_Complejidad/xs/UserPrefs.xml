@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{4E6CF2D6-EDD7-4CC9-B091-191750EF2CA9}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TP_Complejidad/Logic/Algoritmo.cs">
+    <Files>
+      <File FileName="TP_Complejidad/Logic/Algoritmo.cs" Line="31" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.TP__Complejidad PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

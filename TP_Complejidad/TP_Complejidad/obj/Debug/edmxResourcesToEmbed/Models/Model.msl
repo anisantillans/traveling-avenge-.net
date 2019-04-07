@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TPComplejidadModelStoreContainer" CdmEntityContainer="TPComplejidadEntities">
+    <EntitySetMapping Name="Centro_Poblado">
+      <EntityTypeMapping TypeName="TPComplejidadModel.Centro_Poblado">
+        <MappingFragment StoreEntitySet="Centro_Poblado">
+          <ScalarProperty Name="UBIGEO" ColumnName="UBIGEO" />
+          <ScalarProperty Name="DEP" ColumnName="DEP" />
+          <ScalarProperty Name="PROV" ColumnName="PROV" />
+          <ScalarProperty Name="DIST" ColumnName="DIST" />
+          <ScalarProperty Name="CODCP" ColumnName="CODCP" />
+          <ScalarProperty Name="NOMCP" ColumnName="NOMCP" />
+          <ScalarProperty Name="MNOMCP" ColumnName="MNOMCP" />
+          <ScalarProperty Name="CAPITAL" ColumnName="CAPITAL" />
+          <ScalarProperty Name="CON_IE" ColumnName="CON_IE" />
+          <ScalarProperty Name="NIVEL" ColumnName="NIVEL" />
+          <ScalarProperty Name="CPINEI" ColumnName="CPINEI" />
+          <ScalarProperty Name="CPINEI2" ColumnName="CPINEI2" />
+          <ScalarProperty Name="CPINEI_BKP" ColumnName="CPINEI_BKP" />
+          <ScalarProperty Name="FUENTE_G" ColumnName="FUENTE_G" />
+          <ScalarProperty Name="Z" ColumnName="Z" />
+          <ScalarProperty Name="XGD" ColumnName="XGD" />
+          <ScalarProperty Name="YGD" ColumnName="YGD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
